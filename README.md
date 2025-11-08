@@ -1,4 +1,4 @@
-# 🔍 Multi-Modal Icon Vision System
+# Multi-Modal Icon Vision System
 
 > **AI-Powered Mobile UI Icon Detection using YOLOv8**
 
@@ -8,7 +8,7 @@
 [![Flask](https://img.shields.io/badge/Flask-2.3+-lightgrey.svg)](https://flask.palletsprojects.com/)
 [![License](https://img.shields.io/badge/License-Academic-yellow.svg)]()
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Overview](#overview)
 - [Features](#features)
@@ -24,7 +24,7 @@
 - [Contributors](#contributors)
 - [Acknowledgments](#acknowledgments)
 
-## 🎯 Overview
+## Overview
 
 The **Multi-Modal Icon Vision System** is an advanced icon detection system for smartphone screenshots utilizing computer vision and deep learning techniques. By leveraging the YOLOv8 Nano architecture, we developed a lightweight yet powerful model capable of accurately identifying and classifying UI icons across 26 different categories.
 
@@ -38,30 +38,30 @@ The **Multi-Modal Icon Vision System** is an advanced icon detection system for 
 
 ### Applications
 
-- ✅ **Accessibility Enhancement**: Automated icon labeling for screen readers
-- ✅ **Automated UI Testing**: Visual regression testing across devices
-- ✅ **UX Research**: Icon usage analytics and interaction patterns
-- ✅ **Design Analysis**: UI component detection and classification
+- **Accessibility Enhancement**: Automated icon labeling for screen readers
+- **Automated UI Testing**: Visual regression testing across devices
+- **UX Research**: Icon usage analytics and interaction patterns
+- **Design Analysis**: UI component detection and classification
 
-## ✨ Features
+## Features
 
 ### Core Features
 
-- 🎯 **Real-time Icon Detection**: Fast and accurate detection using YOLOv8
-- 🏷️ **Multi-Class Classification**: 26 distinct icon categories
-- 📊 **Confidence Scoring**: Per-detection confidence metrics
-- 🖼️ **Visual Annotations**: Bounding box visualization on screenshots
-- 📈 **Performance Metrics**: Comprehensive evaluation with mAP, precision, recall
+- **Real-time Icon Detection**: Fast and accurate detection using YOLOv8
+- **Multi-Class Classification**: 26 distinct icon categories
+- **Confidence Scoring**: Per-detection confidence metrics
+- **Visual Annotations**: Bounding box visualization on screenshots
+- **Performance Metrics**: Comprehensive evaluation with mAP, precision, recall
 
 ### Web Application
 
-- 📤 **Drag-and-Drop Upload**: Intuitive file upload interface
-- ⚙️ **Adjustable Thresholds**: Dynamic confidence and IOU settings
-- 📊 **Interactive Visualization**: Canvas-based detection overlay
-- 💾 **Export Results**: Download annotated images and JSON data
-- 📱 **Responsive Design**: Works on desktop and mobile browsers
+- **Drag-and-Drop Upload**: Intuitive file upload interface
+- **Adjustable Thresholds**: Dynamic confidence and IOU settings
+- **Interactive Visualization**: Canvas-based detection overlay
+- **Export Results**: Download annotated images and JSON data
+- **Responsive Design**: Works on desktop and mobile browsers
 
-## 🏗️ System Architecture
+## System Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -95,7 +95,7 @@ The **Multi-Modal Icon Vision System** is an advanced icon detection system for 
 - **Parameters**: ~3M (lightweight and efficient)
 - **Input Size**: 640×640 pixels
 
-## 🚀 Installation
+## Installation
 
 ### Prerequisites
 
@@ -135,7 +135,7 @@ pip install -r requirements.txt
 python -c "import torch; import ultralytics; print('Installation successful!')"
 ```
 
-## ⚡ Quick Start
+## Quick Start
 
 ### Option 1: Use Pretrained Model (Demo)
 
@@ -199,7 +199,7 @@ python -m http.server 8000
 
 Visit `http://localhost:8000` in your browser.
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 capstone/
@@ -235,7 +235,7 @@ capstone/
 └── README.md                  # This file
 ```
 
-## 📖 Usage Guide
+## Usage Guide
 
 ### Web Interface
 
@@ -288,7 +288,7 @@ yolo predict model=models/best_icon_detector.pt source=screenshots/
 yolo predict model=models/best_icon_detector.pt source=image.png conf=0.3 iou=0.5
 ```
 
-## 🌐 API Documentation
+## API Documentation
 
 ### REST API Endpoints
 
@@ -371,7 +371,7 @@ Get list of supported icon classes.
 }
 ```
 
-## 🎓 Model Training
+## Model Training
 
 ### Dataset Preparation
 
@@ -426,7 +426,7 @@ tensorboard --logdir runs/train
 
 Visit `http://localhost:6006`
 
-## 📊 Evaluation
+## Evaluation
 
 ### Run Evaluation Script
 
@@ -453,12 +453,12 @@ Based on the project report (mid-semester evaluation):
 
 | Metric | Target | Status |
 |--------|--------|--------|
-| mAP@0.5 | >80% | ✅ In Progress |
-| Inference Time | <100ms | ✅ Optimized |
-| Model Size | <50MB | ✅ YOLOv8n ~6MB |
-| Accuracy | >80% | ✅ Training Phase |
+| mAP@0.5 | >80% | In Progress |
+| Inference Time | <100ms | Optimized |
+| Model Size | <50MB | YOLOv8n ~6MB |
+| Accuracy | >80% | Training Phase |
 
-## 🔮 Future Work
+## Future Work
 
 ### Phase 2: Multi-Modal Integration (Sep-Nov 2025)
 
@@ -489,13 +489,13 @@ class MultiModalFusion:
 - Generate descriptive labels (e.g., "Add Beneficiary" vs "Add Item")
 
 ### Additional Enhancements
-- [ ] Video-based icon tracking
-- [ ] Cross-platform icon detection (iOS, Web)
-- [ ] Real-time mobile app integration
-- [ ] Automated accessibility report generation
-- [ ] Icon similarity search
+- Video-based icon tracking
+- Cross-platform icon detection (iOS, Web)
+- Real-time mobile app integration
+- Automated accessibility report generation
+- Icon similarity search
 
-## 👥 Contributors
+## Contributors
 
 **Team Members:**
 - **Harshit Sharma** (102216014) - Model Development & Training
@@ -510,7 +510,7 @@ class MultiModalFusion:
 Computer Science and Engineering Department  
 Thapar Institute of Engineering and Technology, Patiala
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 This project was developed as part of the Capstone Project (CPG No: 296) at TIET Patiala, August 2025.
 
@@ -531,11 +531,11 @@ This project was developed as part of the Capstone Project (CPG No: 296) at TIET
 
 ---
 
-## 📄 License
+## License
 
 This project is developed for academic purposes at Thapar Institute of Engineering and Technology.
 
-## 📧 Contact
+## Contact
 
 For questions or collaboration:
 - Project Repository: [GitHub Link]
@@ -550,8 +550,8 @@ For questions or collaboration:
 
 <div align="center">
 
-**⭐ If you find this project helpful, please consider giving it a star! ⭐**
+**If you find this project helpful, please consider giving it a star!**
 
-Made with ❤️ at TIET Patiala
+Made with care at TIET Patiala
 
 </div>
