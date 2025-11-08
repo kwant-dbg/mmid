@@ -55,6 +55,13 @@ The Multi-Modal Icon Vision System provides automated detection and classificati
 git clone https://github.com/kwant-dbg/mmid.git
 cd mmid
 
+# Automated setup (Windows)
+.\utils\setup.bat
+
+# Automated setup (Linux/Mac)
+./utils/setup.sh
+
+# Or manual setup:
 # Create virtual environment
 python -m venv venv
 
@@ -132,20 +139,32 @@ mmid/
 │   ├── advanced_models.py          # Multi-model support
 │   └── generate_results.py         # Results generation
 ├── config/
-│   └── config.yaml                 # Configuration
+│   └── config.yaml                 # System configuration
 ├── data/
 │   ├── raw/                        # Rico dataset
-│   └── processed/                  # YOLO format
+│   └── processed/                  # YOLO format datasets
 ├── models/
-│   └── exported/                   # Model exports
+│   ├── yolo11n.pt                  # Pre-trained weights
+│   └── exported/                   # Model exports (ONNX, TensorRT, etc.)
 ├── results/
-│   ├── plots/                      # Visualizations
-│   └── tables/                     # Performance data
+│   ├── plots/                      # Performance visualizations
+│   └── tables/                     # Metrics & analysis tables
+├── docs/
+│   ├── reports/                    # Project reports & summaries
+│   ├── guides/                     # Quick start & upgrade guides
+│   └── ghfhf.pdf                   # Original project document
+├── utils/
+│   ├── setup.bat                   # Windows setup script
+│   ├── setup.sh                    # Linux/Mac setup script
+│   └── demo.py                     # Demo utilities
 ├── tests/
 │   └── test_all.py                 # Unit tests
+├── .gitignore                      # Git ignore rules
 ├── Dockerfile                      # Container build
 ├── docker-compose.yml              # Service orchestration
-└── requirements.txt                # Dependencies
+├── requirements.txt                # Python dependencies
+├── start.py                        # Application launcher
+└── README.md                       # This file
 ```
 
 ## Usage
@@ -165,7 +184,7 @@ mmid/
 from ultralytics import YOLO
 
 # Load model
-model = YOLO('yolo11n.pt')
+model = YOLO('models/yolo11n.pt')
 
 # Inference
 results = model.predict(
@@ -187,13 +206,13 @@ for result in results:
 
 ```bash
 # Single image
-yolo predict model=yolo11n.pt source=screenshot.png
+yolo predict model=models/yolo11n.pt source=screenshot.png
 
 # Batch processing
-yolo predict model=yolo11n.pt source=screenshots/ conf=0.3
+yolo predict model=models/yolo11n.pt source=screenshots/ conf=0.3
 
 # Export results
-yolo predict model=yolo11n.pt source=screenshot.png save=true save_txt=true
+yolo predict model=models/yolo11n.pt source=screenshot.png save=true save_txt=true
 ```
 
 ## Training
@@ -304,7 +323,7 @@ Features:
 from scripts.multimodal_fusion import MultiModalIconDetector
 
 detector = MultiModalIconDetector(
-    vision_model='yolo11n.pt',
+    vision_model='models/yolo11n.pt',
     ocr_langs=['en']
 )
 
@@ -451,6 +470,17 @@ Input Screenshot
 | YOLOv8n | 37.3% | 833 | 6.2 | 3.0M |
 | YOLOv10n | 38.5% | 909 | 5.8 | 2.8M |
 | **YOLOv11n** | **43.5%** | **1111** | **5.4** | **2.6M** |
+
+## Documentation
+
+For detailed project information, see:
+
+- **Quick Start**: `docs/guides/QUICKSTART.md` - Get up and running in 5 minutes
+- **Final Report**: `docs/reports/FINAL_REPORT.md` - Complete 30-page technical report
+- **Implementation Summary**: `docs/reports/IMPLEMENTATION_SUMMARY.md` - Technical implementation details
+- **Project Map**: `docs/guides/PROJECT_MAP.md` - Visual file structure and component guide
+- **Upgrade Guide**: `docs/guides/UPGRADE_GUIDE.md` - YOLOv8 to YOLOv11 migration
+- **Completion Checklist**: `docs/reports/PROJECT_COMPLETION_CHECKLIST.md` - Project status tracking
 
 ## Contributors
 
