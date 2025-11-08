@@ -1,0 +1,85 @@
+# Multi-Modal Icon Vision System - Dependencies
+# Updated for 2025 - Latest Versions
+
+# Core Deep Learning (Latest PyTorch 2.5+)
+torch>=2.5.0
+torchvision>=0.20.0
+torchaudio>=2.5.0
+
+# YOLO v11 (Latest - Released 2024)
+ultralytics>=8.3.0
+
+# Computer Vision (Latest OpenCV)
+opencv-python>=4.10.0
+opencv-contrib-python>=4.10.0
+pillow>=11.0.0
+
+# OCR Libraries (Phase 2 - Multi-Modal)
+easyocr>=1.7.1
+pytesseract>=0.3.13
+
+# Web Framework (Latest Flask)
+flask>=3.1.0
+flask-cors>=5.0.0
+werkzeug>=3.1.0
+
+# Data Processing
+numpy>=2.1.0
+pandas>=2.2.0
+pyyaml>=6.0.2
+
+# Image Augmentation (Latest)
+albumentations>=1.4.0
+imgaug>=0.4.0
+
+# Visualization
+matplotlib>=3.9.0
+seaborn>=0.13.0
+plotly>=5.24.0
+
+# Evaluation Metrics
+scikit-learn>=1.5.0
+scipy>=1.14.0
+
+# OCR (Latest - Future Phase)
+pytesseract>=0.3.13
+easyocr>=1.7.2
+paddleocr>=2.8.1
+
+# Deep Learning Utilities
+timm>=1.0.0  # PyTorch Image Models
+transformers>=4.45.0  # For BERT/Vision Transformers
+sentence-transformers>=3.2.0  # Text embeddings
+
+# Advanced Data Augmentation
+kornia>=0.7.0  # Differentiable augmentation
+augly>=1.0.0
+
+# Model Optimization
+onnx>=1.17.0
+onnxruntime>=1.19.0
+openvino>=2024.5.0  # Intel optimization
+
+# Utilities
+tqdm>=4.66.0
+requests>=2.32.0
+python-dotenv>=1.0.1
+
+# Testing
+pytest>=8.3.0
+pytest-cov>=6.0.0
+pytest-asyncio>=0.24.0
+
+# MLOps & Experiment Tracking
+tensorboard>=2.18.0
+wandb>=0.18.0  # Weights & Biases
+mlflow>=2.17.0
+
+# Performance Profiling
+py-spy>=0.3.14
+memory-profiler>=0.61.0
+
+# Code Quality
+black>=24.10.0
+flake8>=7.1.0
+mypy>=1.13.0

@@ -1,0 +1,133 @@
+# Multi-Modal Icon Vision System Configuration
+
+# Model Configuration
+model:
+  name: "yolo11n"  # YOLOv11 Nano - Latest 2024/2025 (faster & more accurate than v8)
+  architecture: "yolov11"
+  input_size: 640
+  confidence_threshold: 0.25
+  iou_threshold: 0.45
+  max_detections: 100
+  
+  # Advanced YOLOv11 Features
+  use_dfl: true  # Distribution Focal Loss
+  use_tal: true  # Task-Aligned Learning
+  use_amp: true  # Automatic Mixed Precision (faster training)
+  
+# Dataset Configuration
+dataset:
+  name: "rico_icons"
+  num_classes: 26
+  class_names:
+    - "back_button"
+    - "search_icon"
+    - "menu_icon"
+    - "home_icon"
+    - "settings_icon"
+    - "share_icon"
+    - "delete_icon"
+    - "edit_icon"
+    - "add_icon"
+    - "close_icon"
+    - "favorite_icon"
+    - "profile_icon"
+    - "notification_icon"
+    - "camera_icon"
+    - "gallery_icon"
+    - "download_icon"
+    - "upload_icon"
+    - "play_icon"
+    - "pause_icon"
+    - "refresh_icon"
+    - "filter_icon"
+    - "sort_icon"
+    - "calendar_icon"
+    - "location_icon"
+    - "phone_icon"
+    - "email_icon"
+  
+  train_split: 0.7
+  val_split: 0.2
+  test_split: 0.1
+  
+  paths:
+    raw_data: "data/raw"
+    processed_data: "data/processed"
+    annotations: "data/annotations"
+    train: "data/processed/train"
+    val: "data/processed/val"
+    test: "data/processed/test"
+
+# Training Configuration
+training:
+  epochs: 100
+  batch_size: 16
+  learning_rate: 0.001
+  weight_decay: 0.0005
+  momentum: 0.937
+  
+  optimizer: "SGD"
+  scheduler: "cosine"
+  warmup_epochs: 3
+  
+  # Augmentation
+  augmentation:
+    hsv_h: 0.015
+    hsv_s: 0.7
+    hsv_v: 0.4
+    degrees: 0.0
+    translate: 0.1
+    scale: 0.5
+    shear: 0.0
+    perspective: 0.0
+    flipud: 0.0
+    fliplr: 0.5
+    mosaic: 1.0
+    mixup: 0.0
+  
+  # Early Stopping
+  early_stopping:
+    enabled: true
+    patience: 50
+    min_delta: 0.0001
+
+# Inference Configuration
+inference:
+  batch_size: 1
+  device: "cuda"  # cuda, cpu, mps
+  half_precision: false
+  max_inference_time_ms: 100
+
+# Web Application Configuration
+webapp:
+  host: "0.0.0.0"
+  port: 5000
+  debug: true
+  max_upload_size_mb: 10
+  allowed_extensions: ["png", "jpg", "jpeg"]
+  upload_folder: "uploads"
+  results_folder: "results"
+
+# Evaluation Metrics
+evaluation:
+  metrics:
+    - "precision"
+    - "recall"
+    - "mAP50"
+    - "mAP50-95"
+  save_predictions: true
+  save_visualizations: true
+
+# Logging
+logging:
+  level: "INFO"
+  log_file: "logs/training.log"
+  tensorboard_dir: "runs"
+
+# Multi-Modal (Future Phase)
+multimodal:
+  enabled: false  # Will be enabled in Phase 2
+  ocr_engine: "easyocr"
+  fusion_strategy: "late_fusion"
+  text_embedding_dim: 768
+  fusion_hidden_dim: 512
